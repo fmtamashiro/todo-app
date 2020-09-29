@@ -1,0 +1,296 @@
+// variables
+$darkblue: #191847;
+$lightblue: #2e42ff;
+$lighter-blue: #2d43ff;
+$bg-gray: #dde3e9;
+$font-gray: #a2a2a2;
+$gutter: 25px;
+
+// mixins
+
+@mixin device($device) {
+  @if $device == mobile {
+    @media only screen and (max-width: 300px) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media only screen and (max-width: 600px) and (min-width: 300px) {
+      @content;
+    }
+  } @else if $device == screen {
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  }
+}
+
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+// general
+
+body {
+  font-family: 'Inter';
+}
+
+// header
+.header {
+  background: $bg-gray;
+  width: 100%;
+  height: 150px;
+  figure {
+    padding-top: 28px;
+  }
+}
+
+.logo {
+  width: 105px;
+  height: 35px;
+  display: block;
+  margin: 0 auto;
+
+  @include device(screen) {
+    width: 157.5px;
+    height: 42.5px;
+  }
+}
+
+// empty state
+
+.empty-state {
+  display: none;
+  h2 {
+    color: $darkblue;
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    text-align: center;
+    padding-top: $gutter;
+  }
+  figure img {
+    display: block;
+    margin: 0 auto;
+    padding-top: $gutter;
+  }
+  p {
+    color: $darkblue;
+    font-family: Inter;
+    font-size: 16px;
+    line-height: 19px;
+    width: 285px;
+    text-align: left;
+    display: block;
+    margin: 0 auto;
+    padding-top: $gutter;
+  }
+  &.show-empty-state {
+    display: block;
+  }
+}
+
+// all done
+
+.all-done {
+  display: none;
+  h2 {
+    color: $darkblue;
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    text-align: center;
+    padding-top: $gutter;
+  }
+  figure img {
+    display: block;
+    margin: 0 auto;
+    padding-top: $gutter;
+  }
+  p {
+    color: $darkblue;
+    font-family: 'Inter';
+    font-size: 16px;
+    line-height: 19px;
+    width: 285px;
+    text-align: left;
+    display: block;
+    margin: 0 auto;
+    padding-top: $gutter;
+  }
+  &.show-all-done {
+    display: block;
+  }
+}
+
+// main
+
+.main {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+  min-width: 320px;
+  max-width: 800px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: block;
+  margin-top: -50px;
+
+  form {
+    padding-top: 25px;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid #e7e7e7;
+    display: block;
+    font-family: 'Inter';
+    font-size: 16px;
+    outline: none;
+    padding-bottom: 3px;
+    border-bottom: $font-gray 1px solid;
+    margin-left: 18px;
+    width: 100%;
+  }
+
+  input:focus {
+    border-bottom: $lightblue 1px solid;
+  }
+
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  .insert-todo {
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+  }
+
+  .tick {
+    border: 1px solid #191847;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+  }
+
+  .tick::before {
+    content: '✓';
+    font-size: 20px;
+    display: none;
+    color: $lightblue;
+  }
+
+  .span-marker {
+    border: 1px solid #191847;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .done .tick::before {
+    display: inline;
+    padding-left: 4px;
+  }
+
+  .done span {
+    text-decoration: line-through;
+  }
+
+  .todo-list {
+    max-height: 400px;
+    overflow: auto;
+  }
+
+  .todo-text {
+    width: 150px;
+    word-wrap: break-word;
+    color: $darkblue;
+    margin: 0 18px;
+  }
+
+  .pending,
+  .done-tasks {
+    display: none;
+    color: $darkblue;
+    font-family: 'Inter';
+    font-size: 16px;
+    line-height: 19px;
+    text-align: left;
+    padding: 15px;
+  }
+
+  .show {
+    display: block;
+  }
+}
+
+li.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 18px;
+}
+
+.buttons-container {
+  margin-left: auto;
+}
+
+.delete-todo {
+  background-image: url(images/delete-icon.svg);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 7px;
+  padding: 6px;
+  height: 7px;
+  border: 1px solid #2b44ff;
+  border-radius: 20px;
+}
+
+.edit-todo {
+  background-image: url(images/edit-icon.svg);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 7px;
+  padding: 6px;
+  height: 7px;
+  border: 1px solid #2b44ff;
+  border-radius: 20px;
+  margin-left: auto;
+}
+
+// footer
+
+.credits-guava {
+  color: #2e42ff;
+  font-family: Inter;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.other-credits {
+  color: #2d43ff;
+  font-family: Inter;
+  font-size: 10px;
+  line-height: 15px;
+  width: 244px;
+  margin: 0 auto;
+  text-align: center;
+}

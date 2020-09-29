@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>To-do</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <figure>
+        <img src="images/logo.svg" alt="to-do logo" class='logo'>
+      </figure>
+    </div>
+
+    <div class="main">
+
+      <div class="empty-state">
+        <h2>Nenhuma tarefa<br>criada ainda.</h2>
+        <figure>
+          <img src="images/empty-state.svg">
+        </figure>
+        <p>Que tal organizar as ideias criando uma lista agora?</p>
+      </div>
+
+      <div class="all-done">
+        <h2>Tudo pronto!</h2>
+        <figure>
+          <img src="images/all-done.svg">
+        </figure>
+        <p>Sensação de dever cumprido. Que tal um café agora?</p>
+      </div>
+
+      <form class='js-form'>
+        <label for="insert-todo" alt="Inserir nova tarefa" class='insert-todo'>
+          <span class='span-marker' aria-hidden='true'></span>
+          <input autofocus type="text" placeholder="Um passo de cada vez" class='js-todo-input' id="insert-todo">
+        </label>
+      </form>
+      <p class='pending'>Pendente<span class='pending-counter'></span></p>
+      <ul class='todo-list js-todo-list'></ul>
+      <p class='done-tasks'>Feito<span class='done-counter'></span></p>
+      <ul class='done-list js-done-list'></ul>
+    </div>
+
+    <footer>
+      <p class='credits-guava'>Um teste projetado pela <a href='#'>Guava</a></p>
+      <p class='other-credits'>Ilustrações por <a href='#'>Open Doodles</a> | Inter UI Font Family por <a href='#'>Rasmus Andersson</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

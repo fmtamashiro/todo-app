@@ -1,0 +1,282 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  font-family: 'Inter';
+}
+
+.header {
+  background: #dde3e9;
+  width: 100%;
+  height: 150px;
+}
+
+.header figure {
+  padding-top: 28px;
+}
+
+.logo {
+  width: 105px;
+  height: 35px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .logo {
+    width: 157.5px;
+    height: 42.5px;
+  }
+}
+
+.empty-state {
+  display: none;
+}
+
+.empty-state h2 {
+  color: #191847;
+  font-family: 'Inter';
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.empty-state figure img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.empty-state p {
+  color: #191847;
+  font-family: Inter;
+  font-size: 16px;
+  line-height: 19px;
+  width: 285px;
+  text-align: left;
+  display: block;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.empty-state.show-empty-state {
+  display: block;
+}
+
+.all-done {
+  display: none;
+}
+
+.all-done h2 {
+  color: #191847;
+  font-family: 'Inter';
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.all-done figure img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.all-done p {
+  color: #191847;
+  font-family: 'Inter';
+  font-size: 16px;
+  line-height: 19px;
+  width: 285px;
+  text-align: left;
+  display: block;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.all-done.show-all-done {
+  display: block;
+}
+
+.main {
+  background-color: #ffffff;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+  min-width: 320px;
+  max-width: 800px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: block;
+  margin-top: -50px;
+}
+
+.main form {
+  padding-top: 25px;
+}
+
+.main input {
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+  display: block;
+  font-family: 'Inter';
+  font-size: 16px;
+  outline: none;
+  padding-bottom: 3px;
+  border-bottom: #a2a2a2 1px solid;
+  margin-left: 18px;
+  width: 100%;
+}
+
+.main input:focus {
+  border-bottom: #2e42ff 1px solid;
+}
+
+.main input[type='checkbox'] {
+  display: none;
+}
+
+.main .insert-todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 18px;
+}
+
+.main .tick {
+  border: 1px solid #191847;
+  border-radius: 100%;
+  width: 28px;
+  height: 28px;
+}
+
+.main .tick::before {
+  content: '✓';
+  font-size: 20px;
+  display: none;
+  color: #2e42ff;
+}
+
+.main .span-marker {
+  border: 1px solid #191847;
+  border-radius: 100%;
+  width: 28px;
+  height: 28px;
+  display: block;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.main .done .tick::before {
+  display: inline;
+  padding-left: 4px;
+}
+
+.main .done span {
+  text-decoration: line-through;
+}
+
+.main .todo-list {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.main .todo-text {
+  width: 150px;
+  word-wrap: break-word;
+  color: #191847;
+  margin: 0 18px;
+}
+
+.main .pending,
+.main .done-tasks {
+  display: none;
+  color: #191847;
+  font-family: 'Inter';
+  font-size: 16px;
+  line-height: 19px;
+  text-align: left;
+  padding: 15px;
+}
+
+.main .show {
+  display: block;
+}
+
+li.todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 18px;
+}
+
+.buttons-container {
+  margin-left: auto;
+}
+
+.delete-todo {
+  background-image: url(images/delete-icon.svg);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 7px;
+  padding: 6px;
+  height: 7px;
+  border: 1px solid #2b44ff;
+  border-radius: 20px;
+}
+
+.edit-todo {
+  background-image: url(images/edit-icon.svg);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 7px;
+  padding: 6px;
+  height: 7px;
+  border: 1px solid #2b44ff;
+  border-radius: 20px;
+  margin-left: auto;
+}
+
+.credits-guava {
+  color: #2e42ff;
+  font-family: Inter;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.other-credits {
+  color: #2d43ff;
+  font-family: Inter;
+  font-size: 10px;
+  line-height: 15px;
+  width: 244px;
+  margin: 0 auto;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */
