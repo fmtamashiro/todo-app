@@ -11,29 +11,34 @@
 
 <body>
   <div class="container">
-    <div class="header">
+    <header>
       <figure>
         <img src="images/logo.svg" alt="to-do logo" class='logo'>
       </figure>
-    </div>
+    </header>
+
 
     <div class="main">
 
-      <div class="empty-state">
-        <h2>Nenhuma tarefa<br>criada ainda.</h2>
+      <figure class='bg-left'>
+        <img src="images/bg-left.svg">
+      </figure>
+
+      <section class="empty-state">
+        <h2>Nenhuma tarefa criada ainda.</h2>
         <figure>
           <img src="images/empty-state.svg">
         </figure>
         <p>Que tal organizar as ideias criando uma lista agora?</p>
-      </div>
+      </section>
 
-      <div class="all-done">
+      <section class="all-done">
         <h2>Tudo pronto!</h2>
         <figure>
           <img src="images/all-done.svg">
         </figure>
         <p>Sensação de dever cumprido. Que tal um café agora?</p>
-      </div>
+      </section>
 
       <form class='js-form'>
         <label for="insert-todo" alt="Inserir nova tarefa" class='insert-todo'>
@@ -45,6 +50,11 @@
       <ul class='todo-list js-todo-list'></ul>
       <p class='done-tasks'>Feito<span class='done-counter'></span></p>
       <ul class='done-list js-done-list'></ul>
+
+      <figure class='bg-right'>
+        <img src="images/bg-right.svg">
+      </figure>
+
     </div>
 
     <footer>

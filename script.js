@@ -15,8 +15,8 @@ function renderTodo(todo) {
   node.setAttribute('data-key', todo.id);
   node.innerHTML = `
     <input id="${todo.id}" type="checkbox" class='tick js-tick'/>
-    <label for="${todo.id}" class="tick js-tick"></label>
-    <span class="todo-text">${todo.text}</span>
+    <span class="tick js-tick"></span>
+    <label for="${todo.id}" class="todo-text">${todo.text}</label>
     <div class='buttons-container'>
       <button class="delete-todo js-delete-todo"></button>
       <button class="edit-todo js-edit-todo"></button>
@@ -120,10 +120,10 @@ function emptyStateInit() {
   }).length;
 
   if (listIsEmpty) {
-    emptyPrompt.classList.add('show-empty-state');
+    emptyPrompt.classList.add('show');
     pending.classList.remove('show');
   } else {
-    emptyPrompt.classList.remove('show-empty-state');
+    emptyPrompt.classList.remove('show');
     pending.classList.add('show');
     pendingCounter.innerHTML = `(${pendingFilter})`;
   }
@@ -141,9 +141,9 @@ function allDoneInit() {
   const listIsntEmpty = todoItems.length !== 0;
 
   if (tasksAreDone && listIsntEmpty) {
-    allDone.classList.add('show-all-done');
+    allDone.classList.add('show');
   } else {
-    allDone.classList.remove('show-all-done');
+    allDone.classList.remove('show');
   }
 }
 

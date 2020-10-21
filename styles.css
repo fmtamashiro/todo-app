@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -18,27 +17,59 @@ body {
   font-family: 'Inter';
 }
 
-.header {
-  background: #dde3e9;
-  width: 100%;
-  height: 150px;
+button {
+  cursor: pointer;
 }
 
-.header figure {
-  padding-top: 28px;
+header {
+  background: #dde3e9;
+  width: 100%;
+  height: 175px;
+}
+
+header figure {
+  padding-top: 30px;
 }
 
 .logo {
-  width: 105px;
-  height: 35px;
+  width: 157.5px;
+  height: 42.5px;
   display: block;
   margin: 0 auto;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) and (min-width: 300px) {
   .logo {
-    width: 157.5px;
-    height: 42.5px;
+    width: 105px;
+    height: 35px;
+  }
+}
+
+.bg-left {
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  margin-left: -120px;
+  margin-top: 100px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .bg-left {
+    display: none;
+  }
+}
+
+.bg-right {
+  width: 106px;
+  height: 180px;
+  position: absolute;
+  margin-left: 820px;
+  margin-top: -120px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .bg-right {
+    display: none;
   }
 }
 
@@ -50,31 +81,53 @@ body {
   color: #191847;
   font-family: 'Inter';
   font-size: 24px;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 29px;
   text-align: center;
-  padding-top: 25px;
+  padding: 30px 0;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .empty-state h2 {
+    width: 253px;
+    margin: 0 auto;
+  }
 }
 
 .empty-state figure img {
   display: block;
   margin: 0 auto;
-  padding-top: 25px;
+  width: 391px;
+  height: 183px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .empty-state figure img {
+    width: 244px;
+    height: 115px;
+  }
 }
 
 .empty-state p {
   color: #191847;
-  font-family: Inter;
+  font-family: 'Inter';
+  font-weight: normal;
   font-size: 16px;
-  line-height: 19px;
-  width: 285px;
   text-align: left;
+  line-height: 19px;
+  width: 100%;
   display: block;
-  margin: 0 auto;
-  padding-top: 25px;
+  padding-top: 48px;
+  padding-left: 28px;
 }
 
-.empty-state.show-empty-state {
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .empty-state p {
+    width: 295px;
+  }
+}
+
+.empty-state.show {
   display: block;
 }
 
@@ -86,28 +139,44 @@ body {
   color: #191847;
   font-family: 'Inter';
   font-size: 24px;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 29px;
   text-align: center;
-  padding-top: 25px;
+  padding: 30px 0;
 }
 
 .all-done figure img {
   display: block;
   margin: 0 auto;
-  padding-top: 25px;
+  width: 442px;
+  height: 186px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .all-done figure img {
+    width: 267px;
+    height: 112px;
+  }
 }
 
 .all-done p {
   color: #191847;
   font-family: 'Inter';
+  font-weight: normal;
   font-size: 16px;
+  text-align: left;
   line-height: 19px;
-  width: 285px;
+  width: 100%;
   text-align: left;
   display: block;
-  margin: 0 auto;
-  padding-top: 25px;
+  padding-top: 48px;
+  padding-left: 28px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .all-done p {
+    padding-top: 30px;
+  }
 }
 
 .all-done.show-all-done {
@@ -123,30 +192,55 @@ body {
   max-width: 800px;
   overflow: hidden;
   margin: 0 auto;
-  padding: 20px 0;
   display: block;
-  margin-top: -50px;
+  margin-top: -70px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .main {
+    width: 335px;
+    margin-top: -85px;
+  }
 }
 
 .main form {
-  padding-top: 25px;
+  padding-top: 20px;
 }
 
 .main input {
   border: none;
-  border-bottom: 1px solid #e7e7e7;
   display: block;
+  margin: 0 14px;
   font-family: 'Inter';
   font-size: 16px;
   outline: none;
   padding-bottom: 3px;
-  border-bottom: #a2a2a2 1px solid;
-  margin-left: 18px;
+  border-bottom: 1px solid rgba(162, 162, 162, 0.6);
   width: 100%;
 }
 
 .main input:focus {
   border-bottom: #2e42ff 1px solid;
+}
+
+.main input::-webkit-input-placeholder {
+  color: #a2a2a2;
+  font-size: 16px;
+}
+
+.main input:-ms-input-placeholder {
+  color: #a2a2a2;
+  font-size: 16px;
+}
+
+.main input::-ms-input-placeholder {
+  color: #a2a2a2;
+  font-size: 16px;
+}
+
+.main input::placeholder {
+  color: #a2a2a2;
+  font-size: 16px;
 }
 
 .main input[type='checkbox'] {
@@ -160,25 +254,30 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 18px;
+  padding: 0 28px 41px 28px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .main .insert-todo {
+    padding: 0 28px 30px 28px;
+  }
 }
 
 .main .tick {
-  border: 1px solid #191847;
+  border: 1px solid #a2a2a2;
   border-radius: 100%;
   width: 28px;
   height: 28px;
 }
 
 .main .tick::before {
-  content: '✓';
-  font-size: 20px;
+  content: url(images/checked-icon.svg);
   display: none;
-  color: #2e42ff;
+  margin-left: 3px;
 }
 
 .main .span-marker {
-  border: 1px solid #191847;
+  border: 1px solid #a2a2a2;
   border-radius: 100%;
   width: 28px;
   height: 28px;
@@ -192,7 +291,7 @@ body {
   padding-left: 4px;
 }
 
-.main .done span {
+.main .done label {
   text-decoration: line-through;
 }
 
@@ -216,7 +315,7 @@ body {
   font-size: 16px;
   line-height: 19px;
   text-align: left;
-  padding: 15px;
+  padding: 0 28px 20px 28px;
 }
 
 .main .show {
@@ -230,11 +329,23 @@ li.todo-item {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5px 18px;
+  padding-left: 28px;
+  padding-bottom: 20px;
+}
+
+li.todo-item:last-child {
+  padding-bottom: 40px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  li.todo-item:last-child {
+    padding-bottom: 30px;
+  }
 }
 
 .buttons-container {
   margin-left: auto;
+  padding-right: 28px;
 }
 
 .delete-todo {
@@ -262,21 +373,38 @@ li.todo-item {
   margin-left: auto;
 }
 
+footer {
+  padding-top: 20px;
+}
+
 .credits-guava {
-  color: #2e42ff;
-  font-family: Inter;
+  color: #191847;
+  font-family: 'Inter';
   font-size: 12px;
   line-height: 14px;
   text-align: center;
 }
 
+.credits-guava a {
+  color: #2e42ff;
+}
+
 .other-credits {
-  color: #2d43ff;
-  font-family: Inter;
+  color: #191847;
+  font-family: 'Inter';
   font-size: 10px;
-  line-height: 15px;
-  width: 244px;
-  margin: 0 auto;
+  line-height: 12px;
+  margin: 10px auto;
   text-align: center;
+}
+
+.other-credits a {
+  color: #2e42ff;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .other-credits {
+    width: 244px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
