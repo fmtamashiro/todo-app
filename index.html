@@ -5,20 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stylesheets/styles.css">
   <title>To-do</title>
 </head>
 
 <body>
   <div class="container">
     <header>
-      <figure>
+      <h1>Todo App</h1>
+      <figure aria-hidden='true'>
         <img src="images/logo.svg" alt="to-do logo" class='logo'>
       </figure>
     </header>
 
 
-    <div class="main">
+    <main>
 
       <figure class='bg-left'>
         <img src="images/bg-left.svg">
@@ -46,7 +47,7 @@
           <input autofocus type="text" placeholder="Um passo de cada vez" class='js-todo-input' id="insert-todo">
         </label>
       </form>
-      <p class='pending'>Pendente<span class='pending-counter'></span></p>
+      <p class='pending'>Pendente <span class='pending-counter'></span></p>
       <ul class='todo-list js-todo-list'></ul>
       <p class='done-tasks'>Feito<span class='done-counter'></span></p>
       <ul class='done-list js-done-list'></ul>
@@ -55,7 +56,7 @@
         <img src="images/bg-right.svg">
       </figure>
 
-    </div>
+    </main>
 
     <footer>
       <p class='credits-guava'>Um teste projetado pela <a href='#'>Guava</a></p>

@@ -31,6 +31,10 @@ header figure {
   padding-top: 30px;
 }
 
+header h1 {
+  display: none;
+}
+
 .logo {
   width: 157.5px;
   height: 42.5px;
@@ -183,7 +187,7 @@ header figure {
   display: block;
 }
 
-.main {
+main {
   background-color: #ffffff;
   border-radius: 12px;
   -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
@@ -197,17 +201,17 @@ header figure {
 }
 
 @media only screen and (max-width: 600px) and (min-width: 300px) {
-  .main {
+  main {
     width: 335px;
     margin-top: -85px;
   }
 }
 
-.main form {
+main form {
   padding-top: 20px;
 }
 
-.main input {
+main input {
   border: none;
   display: block;
   margin: 0 14px;
@@ -215,39 +219,39 @@ header figure {
   font-size: 16px;
   outline: none;
   padding-bottom: 3px;
-  border-bottom: 1px solid rgba(162, 162, 162, 0.6);
+  border-bottom: 1px solid #e7e7e7;
   width: 100%;
 }
 
-.main input:focus {
+main input:focus {
   border-bottom: #2e42ff 1px solid;
 }
 
-.main input::-webkit-input-placeholder {
+main input::-webkit-input-placeholder {
   color: #a2a2a2;
   font-size: 16px;
 }
 
-.main input:-ms-input-placeholder {
+main input:-ms-input-placeholder {
   color: #a2a2a2;
   font-size: 16px;
 }
 
-.main input::-ms-input-placeholder {
+main input::-ms-input-placeholder {
   color: #a2a2a2;
   font-size: 16px;
 }
 
-.main input::placeholder {
+main input::placeholder {
   color: #a2a2a2;
   font-size: 16px;
 }
 
-.main input[type='checkbox'] {
+main input[type='checkbox'] {
   display: none;
 }
 
-.main .insert-todo {
+main .insert-todo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,25 +262,29 @@ header figure {
 }
 
 @media only screen and (max-width: 600px) and (min-width: 300px) {
-  .main .insert-todo {
+  main .insert-todo {
     padding: 0 28px 30px 28px;
   }
 }
 
-.main .tick {
+main .tick {
   border: 1px solid #a2a2a2;
   border-radius: 100%;
   width: 28px;
   height: 28px;
 }
 
-.main .tick::before {
-  content: url(images/checked-icon.svg);
+main .todo-item.done > span {
+  border: 1px solid #2d43ff;
+}
+
+main .tick::before {
+  content: url(../images/checked-icon.svg);
   display: none;
   margin-left: 3px;
 }
 
-.main .span-marker {
+main .span-marker {
   border: 1px solid #a2a2a2;
   border-radius: 100%;
   width: 28px;
@@ -286,29 +294,29 @@ header figure {
       flex-shrink: 0;
 }
 
-.main .done .tick::before {
+main .done .tick::before {
   display: inline;
   padding-left: 4px;
 }
 
-.main .done label {
+main .done label {
   text-decoration: line-through;
 }
 
-.main .todo-list {
+main .todo-list {
   max-height: 400px;
   overflow: auto;
 }
 
-.main .todo-text {
+main .todo-text {
   width: 150px;
   word-wrap: break-word;
   color: #191847;
   margin: 0 18px;
 }
 
-.main .pending,
-.main .done-tasks {
+main .pending,
+main .done-tasks {
   display: none;
   color: #191847;
   font-family: 'Inter';
@@ -318,7 +326,7 @@ header figure {
   padding: 0 28px 20px 28px;
 }
 
-.main .show {
+main .show {
   display: block;
 }
 
@@ -333,13 +341,17 @@ li.todo-item {
   padding-bottom: 20px;
 }
 
+li.todo-item:hover {
+  background: #f2f2f2;
+}
+
 li.todo-item:last-child {
-  padding-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 600px) and (min-width: 300px) {
   li.todo-item:last-child {
-    padding-bottom: 30px;
+    margin-bottom: 30px;
   }
 }
 
@@ -349,7 +361,7 @@ li.todo-item:last-child {
 }
 
 .delete-todo {
-  background-image: url(images/delete-icon.svg);
+  background-image: url(../images/delete-icon.svg);
   background-color: white;
   background-repeat: no-repeat;
   background-position: center;
@@ -358,19 +370,6 @@ li.todo-item:last-child {
   height: 7px;
   border: 1px solid #2b44ff;
   border-radius: 20px;
-}
-
-.edit-todo {
-  background-image: url(images/edit-icon.svg);
-  background-color: white;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 7px;
-  padding: 6px;
-  height: 7px;
-  border: 1px solid #2b44ff;
-  border-radius: 20px;
-  margin-left: auto;
 }
 
 footer {

@@ -19,7 +19,6 @@ function renderTodo(todo) {
     <label for="${todo.id}" class="todo-text">${todo.text}</label>
     <div class='buttons-container'>
       <button class="delete-todo js-delete-todo"></button>
-      <button class="edit-todo js-edit-todo"></button>
     </div>
  
   `;

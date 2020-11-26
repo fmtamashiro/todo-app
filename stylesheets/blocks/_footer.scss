@@ -1,0 +1,32 @@
+footer {
+  padding-top: 20px;
+}
+
+.credits-guava {
+  color: $darkblue;
+  font-family: 'Inter';
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+
+  a {
+    color: $lightblue;
+  }
+}
+
+.other-credits {
+  color: $darkblue;
+  font-family: 'Inter';
+  font-size: 10px;
+  line-height: 12px;
+  margin: 10px auto;
+  text-align: center;
+
+  a {
+    color: $lightblue;
+  }
+
+  @include device(tablet) {
+    width: 244px;
+  }
+}

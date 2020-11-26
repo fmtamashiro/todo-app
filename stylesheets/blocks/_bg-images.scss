@@ -1,0 +1,23 @@
+.bg-left {
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  margin-left: -120px;
+  margin-top: 100px;
+
+  @include device(tablet) {
+    display: none;
+  }
+}
+
+.bg-right {
+  width: 106px;
+  height: 180px;
+  position: absolute;
+  margin-left: 820px;
+  margin-top: -120px;
+
+  @include device(tablet) {
+    display: none;
+  }
+}
